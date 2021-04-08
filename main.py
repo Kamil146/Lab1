@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib as mat
+import matplotlib.pyplot as plt
 
 # arr= np.array([1,2,3,4,5])
 # print(arr)
@@ -77,7 +77,7 @@ import matplotlib as mat
 
 # Q = np.delete(V, 3, 0)
 # print(Q)
-v = np.arange(1,7)
+# v = np.arange(1,7)
 # print("\n\n")
 # print( np.delete(v, 3, 0) )
 
@@ -88,18 +88,18 @@ v = np.arange(1,7)
 # np.shape(V))
 
 #4.5
-A = np.array([[1, 0, 0],
-[2, 3, -1],
-[0, 7, 2]] )
-B = np.array([[1, 2, 3],
-[-1, 5, 2],
-[2, 2, 2]] )
+# A = np.array([[1, 0, 0],
+# [2, 3, -1],
+# [0, 7, 2]] )
+# B = np.array([[1, 2, 3],
+# [-1, 5, 2],
+# [2, 2, 2]] )
 # print( A+B )
 # print( A-B )
 # print( A+2 )
 # print( 2*A )
 
-MM1 = A@B
+# MM1 = A@B
 # print(MM1)
 # MM2 = B@A
 # print(MM2)
@@ -134,13 +134,13 @@ MM1 = A@B
 
 
 
-A == B
-A != B
-2 < A
-A > B
-A < B
-A >= B
-A <= B
+# A == B
+# A != B
+# 2 < A
+# A > B
+# A < B
+# A >= B
+# A <= B
 
 # np.logical_not(A)
 # print(np.logical_and(A, B),
@@ -154,11 +154,109 @@ A <= B
 # print( np.logical_or(v>4, v<2))
 # print( np.nonzero(v>4) )
 # print( v[np.nonzero(v>4) ] )
-print(A)
-print(np.max(A))
-print(np.min(A))
-print(np.max(A,0))
-print(np.max(A,1))
-print( A.flatten() )
-print( A.flatten('F') )
+# print(A)
+# print(np.max(A))
+# print(np.min(A))
+# print(np.max(A,0))
+# print(np.max(A,1))
+# print( A.flatten() )
+# print( A.flatten('F') )
 
+#Matlabplotlib
+# x = [1,2,3]
+# y = [4,6,5]
+# plt.plot(x,y)
+# plt.show()
+
+
+# x = np.arange(0.0, 2.0, 0.01)
+# y = np.sin(2.0*np.pi*x)
+# plt.plot(x,y,'r:',linewidth=3)
+# plt.xlabel('Czas')
+# plt.ylabel('Pozycja')
+# plt.title('Nasz pierwszy wykres')
+# plt.grid(True)
+#
+#
+# plt.show()
+
+
+# x = np.arange(0.0, 2.0, 0.01)
+# y1 = np.sin(2.0*np.pi*x)
+# y2 = np.cos(2.0*np.pi*x)
+# plt.plot(x,y1,'r:',x,y2,'g')
+# plt.legend(('dane y1','dane y2'))
+# plt.xlabel('Czas')
+# plt.ylabel('Pozycja')
+# plt.title('Wykres')
+# plt.grid(True)
+# plt.show()
+
+
+# x = np.arange(0.0, 2.0, 0.01)
+# y1 = np.sin(2.0*np.pi*x)
+# y2 = np.cos(2.0*np.pi*x)
+# y = y1*y2
+# l1, = plt.plot(x,y,'b')
+# l2,l3 = plt.plot(x,y1,'r:',x,y2,'g')
+# plt.legend((l2,l3,l1),('dane y1','dane y2','y1*y2'))
+# plt.xlabel('Czas')
+# plt.ylabel('Pozycja')
+# plt.title('Wykres')
+# plt.grid(True)
+# plt.show()
+
+#ZADANIA
+#z3
+A = np.block([np.block([
+    [np.block([
+        [np.arange(1,6)],
+        [np.arange(5,0,-1)]
+    ])],
+    [np.block([
+    np.zeros((3,2)),np.block([[np.full((2,3),2)],[np.arange(-90,-60,10)]])])]]),np.full((5,1),10)])
+print(A)
+#z4
+B=A[1]+A[3]
+print("\n\n",B)
+
+#z5
+C=np.max(A,axis=0)
+print("\n\n",C)
+
+#z6
+D=np.delete(B,(0,-1))
+print("\n\n",D)
+
+#z7
+D[D==4]=0
+print("\n\n",D)
+
+#z8
+
+index=[max(C)]
+E=np.delete(C,np.argwhere((C==np.max(C)) | (C==np.min(C))))
+print("\n\n",E)
+
+#z9
+# row,col=A.shape
+# for i in range (row):
+#     if(np.max(A[i])==np.max(A) and np.min(A[i])==np.min(A)): print(A[i])
+
+#z10
+# MM1=D@E
+# print("\n",MM1)
+# MT1=D*E
+# print("\n",MT1)
+
+#z11
+
+def fun1(a):
+    A=np.random.randint(11, size=(a, a))
+    print("\n",A)
+    s=0
+    for i in range(a):
+        s+=A[(i,i)]
+    print(s)
+
+fun1(4)
