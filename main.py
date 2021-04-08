@@ -251,12 +251,40 @@ print("\n\n",E)
 
 #z11
 
-def fun1(a):
+# def fun1(a):
+#     A=np.random.randint(11, size=(a, a))
+#     print("\n",A)
+#     s=0
+#     for i in range(a):
+#         s+=A[(i,i)]
+#     print(s)
+#
+# fun1(4)
+
+#z12
+
+# def fun2(a):
+#     A=np.random.randint(11, size=(a, a))
+#     print("\n",A)
+#     s=0
+#     for i in range(a):
+#         A[(i,i)]=0
+#         A[(a-i-1,i)]=0
+#     print("\n",A)
+#
+# fun2(8)
+
+#z13
+
+def fun3(a):
     A=np.random.randint(11, size=(a, a))
     print("\n",A)
     s=0
     for i in range(a):
-        s+=A[(i,i)]
+        for j in range(a):
+            if((i%2)!=0): s+=A[i,j]
+
+
     print(s)
 
-fun1(4)
+fun3(6)
