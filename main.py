@@ -77,7 +77,7 @@ import matplotlib as mat
 
 # Q = np.delete(V, 3, 0)
 # print(Q)
-# v = np.arange(1,7)
+v = np.arange(1,7)
 # print("\n\n")
 # print( np.delete(v, 3, 0) )
 
@@ -121,8 +121,44 @@ MM1 = A@B
 # y = np.linalg.solve(A,b)
 # print(y)
 
-PM = np.linalg.matrix_power(A,2)
-PT = A**2
+# PM = np.linalg.matrix_power(A,2)
+# PT = A**2
+# print(A)
+# print(PT)
+# print(PM)
+
+# print(A.T)
+# print(A.transpose())
+# print(A.conj().T)
+# print(A.conj().transpose())
+
+
+
+A == B
+A != B
+2 < A
+A > B
+A < B
+A >= B
+A <= B
+
+# np.logical_not(A)
+# print(np.logical_and(A, B),
+# np.logical_or(A, B),
+# np.logical_xor(A, B))
+
+# print( np.all(A) )
+# print( np.any(A) )
+
+# print( v > 4 )
+# print( np.logical_or(v>4, v<2))
+# print( np.nonzero(v>4) )
+# print( v[np.nonzero(v>4) ] )
 print(A)
-print(PT)
-print(PM)
+print(np.max(A))
+print(np.min(A))
+print(np.max(A,0))
+print(np.max(A,1))
+print( A.flatten() )
+print( A.flatten('F') )
+
