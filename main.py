@@ -288,3 +288,13 @@ def fun3(a):
     print(s)
 
 fun3(6)
+
+#z14
+x=np.arange(-10,10.1,0.1)
+y=lambda x:plt.plot(x,np.cos(2*x),'--',color='red')
+print(y(x))
+plt.show()
+
+#z15
+
+
