@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def mod(x):
-    y=np.copy(x)
+    y=np.empty(shape=np.shape(x))
 
     for i in range(np.size(x)):
 

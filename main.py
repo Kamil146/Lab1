@@ -302,7 +302,7 @@ m.mod(x)
 #z17
 p=3*np.cos(2*x)+m.mod(x)
 plt.plot(x,p,'*',color='blue')
-#plt.show()
+plt.show()
 
 #z18
 AA=np.array([[10 , 5, 1, 7],
@@ -313,6 +313,5 @@ BB=np.array([[34],[44],[25],[27]])
 
 AAi=np.linalg.inv(AA)
 Xr=AAi@BB
-
 print(Xr)
 
