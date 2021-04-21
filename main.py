@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import module as m
 
 # arr= np.array([1,2,3,4,5])
 # print(arr)
@@ -292,9 +293,26 @@ fun3(6)
 #z14
 x=np.arange(-10,10.1,0.1)
 y=lambda x:plt.plot(x,np.cos(2*x),'--',color='red')
-print(y(x))
-plt.show()
+y(x)
 
 #z15
+m.mod(x)
 
+
+#z17
+p=3*np.cos(2*x)+m.mod(x)
+plt.plot(x,p,'*',color='blue')
+#plt.show()
+
+#z18
+AA=np.array([[10 , 5, 1, 7],
+           [10, 9, 5, 5],
+           [1,6 ,7 ,3],
+            [10, 0 ,1 , 5]])
+BB=np.array([[34],[44],[25],[27]])
+
+AAi=np.linalg.inv(AA)
+Xr=AAi@BB
+
+print(Xr)
 
